@@ -1,18 +1,13 @@
 
 workflows:
   android-workflow:
-    name: Build Android App
+    name: Build DarKblu APK
     environment:
       flutter: stable
-      xcode: latest
     scripts:
       - name: Get dependencies
         script: flutter pub get
       - name: Build APK
-        script: flutter build apk --debug
+        script: flutter build apk --release
     artifacts:
-      - build/app/outputs/flutter-apk/app-debug.apk
-    publishing:
-      email:
-        recipients:
-          - condrachemihai@gmail.com
+      - build/app/outputs/flutter-apk/app-release.apk
